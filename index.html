@@ -5,55 +5,160 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aseer ABM - Network Support Engineer</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-        header { background: #4CAF50; color: white; text-align: center; padding: 1em; }
-        section { padding: 2em; max-width: 800px; margin: auto; }
-        h2 { color: #333; }
-        .contact-info { text-align: center; margin-bottom: 2em; }
-        .contact-info a { color: #4CAF50; text-decoration: none; }
-        .section-title { color: #4CAF50; margin-top: 1.5em; }
-        ul { line-height: 1.6; }
+        /* General Styling */
+        body { 
+            font-family: Arial, sans-serif; 
+            color: #333; 
+            margin: 0; 
+            background-color: #f4f4f9;
+        }
+        a { color: #007acc; text-decoration: none; }
+        a:hover { color: #005f8d; }
+        
+        /* Header */
+        header { 
+            background: #007acc; 
+            color: white; 
+            padding: 2em; 
+            text-align: center; 
+        }
+        header h1 { 
+            font-size: 2.5em; 
+            margin: 0;
+        }
+        header p { 
+            font-size: 1.2em; 
+            margin: 0.5em 0 0; 
+        }
+
+        /* Sections */
+        .container { 
+            max-width: 1000px; 
+            margin: auto; 
+            padding: 2em; 
+        }
+        h2.section-title { 
+            color: #007acc; 
+            border-bottom: 2px solid #007acc; 
+            padding-bottom: 0.3em; 
+            margin-top: 1.5em; 
+        }
+        
+        /* Info Boxes */
+        .info-box { 
+            background: #e8f4fd; 
+            border-left: 4px solid #007acc; 
+            padding: 1em; 
+            margin: 1em 0; 
+        }
+        
+        /* Grid for Experience and Skills */
+        .grid { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 1.5em; 
+        }
+        .grid-item { 
+            background: white; 
+            padding: 1em; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .grid h3 { 
+            color: #005f8d; 
+        }
+
+        /* Contact and Footer */
+        .contact-info { 
+            text-align: center; 
+            padding: 1em; 
+        }
+        .footer { 
+            background: #007acc; 
+            color: white; 
+            text-align: center; 
+            padding: 1em; 
+            margin-top: 2em; 
+        }
     </style>
 </head>
 <body>
+
     <header>
         <h1>Aseer ABM</h1>
         <p>Network Support Engineer</p>
     </header>
-    <section>
+
+    <section class="container">
         <div class="contact-info">
             <p>📧 <a href="mailto:abmaasir119@gmail.com">abmaasir119@gmail.com</a> | 📞 +94757792973</p>
             <p><a href="http://www.linkedin.com/in/aseer-a-b-m-75b426177" target="_blank">LinkedIn Profile</a></p>
         </div>
-        
+
         <h2 class="section-title">Professional Summary</h2>
-        <p>Energetic and knowledgeable Network Support Engineer with demonstrated experience in LAN, WAN, SD-WAN, and network security. Passionate about leveraging technical expertise to optimize network performance and security, ensuring seamless and secure connectivity.</p>
-        
+        <div class="info-box">
+            <p>Energetic and knowledgeable Network Support Engineer with demonstrated experience in LAN, WAN, SD-WAN, and network security. Passionate about leveraging technical expertise to optimize network performance and security, ensuring seamless and secure connectivity.</p>
+        </div>
+
         <h2 class="section-title">Experience</h2>
-        <h3>Network Support Engineer - HCL Technologies Sri Lanka</h3>
-        <p><em>2023 - Present</em></p>
-        <ul>
-            <li>Managed WAN and SD-WAN environments with vendors such as Cisco, Colt, and NTT.</li>
-            <li>Configured Fortinet firewalls, developed firewall policies, and optimized traffic flow.</li>
-            <li>Diagnosed and resolved network issues, enhancing user experience.</li>
-        </ul>
-        
+        <div class="grid">
+            <div class="grid-item">
+                <h3>Network Support Engineer - HCL Technologies Sri Lanka</h3>
+                <p><em>2023 - Present</em></p>
+                <ul>
+                    <li>Managed WAN and SD-WAN environments with Cisco, Colt, and NTT.</li>
+                    <li>Configured Fortinet firewalls, developed firewall policies, and optimized traffic flow.</li>
+                    <li>Diagnosed and resolved network issues to enhance user experience.</li>
+                </ul>
+            </div>
+            <div class="grid-item">
+                <h3>Network Analyst - HCL Technologies Sri Lanka</h3>
+                <p><em>2021 - 2023</em></p>
+                <ul>
+                    <li>Monitored network infrastructure and improved operational efficiency.</li>
+                    <li>Collaborated with vendors for troubleshooting and performance enhancement.</li>
+                    <li>Configured virtual servers, load balancers, and optimized security settings.</li>
+                </ul>
+            </div>
+        </div>
+
         <h2 class="section-title">Skills</h2>
-        <ul>
-            <li>Network Infrastructure: LAN, WAN, SD-WAN, Data Center</li>
-            <li>Firewall & Security: Fortinet, Checkpoint</li>
-            <li>Routing Protocols: TCP/IP, Subnetting, IP Addressing</li>
-            <li>Tools: ServiceNow, SolarWinds, Versa Director</li>
-        </ul>
-        
+        <div class="grid">
+            <div class="grid-item">
+                <h3>Technical Skills</h3>
+                <ul>
+                    <li>Network Infrastructure: LAN, WAN, SD-WAN, Data Center</li>
+                    <li>Firewall & Security: Fortinet, Checkpoint</li>
+                    <li>Routing Protocols: TCP/IP, IP Addressing, Subnetting</li>
+                </ul>
+            </div>
+            <div class="grid-item">
+                <h3>Tools & Technologies</h3>
+                <ul>
+                    <li>ServiceNow, SolarWinds, Versa Director</li>
+                    <li>Wireless: Cisco WLC</li>
+                    <li>Load Balancers: Brocade ADX, F5</li>
+                </ul>
+            </div>
+        </div>
+
         <h2 class="section-title">Education</h2>
-        <p>BIT (Hons) in Networking and Mobile Computing - Horizon Campus, 2018 - 2022</p>
-        
+        <div class="info-box">
+            <p><strong>BIT (Hons) in Networking and Mobile Computing</strong> - Horizon Campus (2018 - 2022)</p>
+            <p>Second Class Upper Division | GPA: 3.39/4.0</p>
+        </div>
+
         <h2 class="section-title">Certifications</h2>
         <ul>
             <li>Microsoft Security, Compliance, and Identity Fundamentals</li>
             <li>ITIL 4 Foundation</li>
+            <li>AWS Partner: Generative AI Essentials (Business)</li>
         </ul>
     </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 Aseer ABM. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>
