@@ -5,158 +5,355 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aseer ABM - Network Support Engineer</title>
     <style>
-        /* General Styling */
-        body { 
-            font-family: Arial, sans-serif; 
-            color: #333; 
-            margin: 0; 
-            background-color: #f4f4f9;
-        }
-        a { color: #007acc; text-decoration: none; }
-        a:hover { color: #005f8d; }
-        
-        /* Header */
-        header { 
-            background: #007acc; 
-            color: white; 
-            padding: 2em; 
-            text-align: center; 
-        }
-        header h1 { 
-            font-size: 2.5em; 
+        /* Reset and Basic Styling */
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        header p { 
-            font-size: 1.2em; 
-            margin: 0.5em 0 0; 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        a {
+            color: #007acc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
         }
 
-        /* Sections */
-        .container { 
-            max-width: 1000px; 
-            margin: auto; 
-            padding: 2em; 
+        /* Header */
+        header {
+            background-color: #007acc;
+            color: #fff;
+            padding: 2rem 1rem;
+            text-align: center;
         }
-        h2.section-title { 
-            color: #007acc; 
-            border-bottom: 2px solid #007acc; 
-            padding-bottom: 0.3em; 
-            margin-top: 1.5em; 
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
         }
-        
-        /* Info Boxes */
-        .info-box { 
-            background: #e8f4fd; 
-            border-left: 4px solid #007acc; 
-            padding: 1em; 
-            margin: 1em 0; 
+        header p {
+            font-size: 1.2rem;
         }
-        
-        /* Grid for Experience and Skills */
-        .grid { 
-            display: grid; 
-            grid-template-columns: 1fr 1fr; 
-            gap: 1.5em; 
+
+        /* Navigation */
+        nav {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
-        .grid-item { 
-            background: white; 
-            padding: 1em; 
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        nav ul li {
+            margin: 0 1rem;
+        }
+        nav ul li a {
+            display: block;
+            padding: 1rem;
+            font-weight: bold;
+            color: #333;
+        }
+        nav ul li a:hover {
+            background-color: #f0f2f5;
+            border-radius: 4px;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-size: 2rem;
+            color: #007acc;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #007acc;
+            display: inline-block;
+            padding-bottom: 0.3rem;
+        }
+
+        /* Professional Summary */
+        .summary {
+            background-color: #fff;
+            padding: 1.5rem;
             border-radius: 8px;
-        }
-        .grid h3 { 
-            color: #005f8d; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
         }
 
-        /* Contact and Footer */
-        .contact-info { 
-            text-align: center; 
-            padding: 1em; 
+        /* Experience */
+        .experience {
+            margin-bottom: 2rem;
         }
-        .footer { 
-            background: #007acc; 
-            color: white; 
-            text-align: center; 
-            padding: 1em; 
-            margin-top: 2em; 
+        .job {
+            background-color: #fff;
+            padding: 1.5rem;
+            border-left: 5px solid #007acc;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+        }
+        .job h3 {
+            color: #007acc;
+            margin-bottom: 0.5rem;
+        }
+        .job h4 {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 0.5rem;
+        }
+        .job ul {
+            list-style: disc inside;
+            margin-left: 1.5rem;
+        }
+
+        /* Skills */
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .skill-category {
+            background-color: #fff;
+            padding: 1rem;
+            border-radius: 8px;
+            flex: 1 1 300px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .skill-category h4 {
+            color: #007acc;
+            margin-bottom: 0.5rem;
+        }
+        .skill-category ul {
+            list-style: none;
+        }
+        .skill-category ul li::before {
+            content: "• ";
+            color: #007acc;
+        }
+
+        /* Education & Certifications */
+        .education, .certifications, .languages {
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+        }
+        .education h3, .certifications h3, .languages h3 {
+            color: #007acc;
+            margin-bottom: 0.5rem;
+        }
+        .education p, .certifications p, .languages p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #007acc;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+            nav ul li {
+                margin: 0;
+            }
+            .skills {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 <body>
 
+    <!-- Header -->
     <header>
         <h1>Aseer ABM</h1>
         <p>Network Support Engineer</p>
     </header>
 
-    <section class="container">
-        <div class="contact-info">
-            <p>📧 <a href="mailto:abmaasir119@gmail.com">abmaasir119@gmail.com</a> | 📞 +94757792973</p>
-            <p><a href="http://www.linkedin.com/in/aseer-a-b-m-75b426177" target="_blank">LinkedIn Profile</a></p>
-        </div>
-
-        <h2 class="section-title">Professional Summary</h2>
-        <div class="info-box">
-            <p>Energetic and knowledgeable Network Support Engineer with demonstrated experience in LAN, WAN, SD-WAN, and network security. Passionate about leveraging technical expertise to optimize network performance and security, ensuring seamless and secure connectivity.</p>
-        </div>
-
-        <h2 class="section-title">Experience</h2>
-        <div class="grid">
-            <div class="grid-item">
-                <h3>Network Support Engineer - HCL Technologies Sri Lanka</h3>
-                <p><em>2023 - Present</em></p>
-                <ul>
-                    <li>Managed WAN and SD-WAN environments with Cisco, Colt, and NTT.</li>
-                    <li>Configured Fortinet firewalls, developed firewall policies, and optimized traffic flow.</li>
-                    <li>Diagnosed and resolved network issues to enhance user experience.</li>
-                </ul>
-            </div>
-            <div class="grid-item">
-                <h3>Network Analyst - HCL Technologies Sri Lanka</h3>
-                <p><em>2021 - 2023</em></p>
-                <ul>
-                    <li>Monitored network infrastructure and improved operational efficiency.</li>
-                    <li>Collaborated with vendors for troubleshooting and performance enhancement.</li>
-                    <li>Configured virtual servers, load balancers, and optimized security settings.</li>
-                </ul>
-            </div>
-        </div>
-
-        <h2 class="section-title">Skills</h2>
-        <div class="grid">
-            <div class="grid-item">
-                <h3>Technical Skills</h3>
-                <ul>
-                    <li>Network Infrastructure: LAN, WAN, SD-WAN, Data Center</li>
-                    <li>Firewall & Security: Fortinet, Checkpoint</li>
-                    <li>Routing Protocols: TCP/IP, IP Addressing, Subnetting</li>
-                </ul>
-            </div>
-            <div class="grid-item">
-                <h3>Tools & Technologies</h3>
-                <ul>
-                    <li>ServiceNow, SolarWinds, Versa Director</li>
-                    <li>Wireless: Cisco WLC</li>
-                    <li>Load Balancers: Brocade ADX, F5</li>
-                </ul>
-            </div>
-        </div>
-
-        <h2 class="section-title">Education</h2>
-        <div class="info-box">
-            <p><strong>BIT (Hons) in Networking and Mobile Computing</strong> - Horizon Campus (2018 - 2022)</p>
-            <p>Second Class Upper Division | GPA: 3.39/4.0</p>
-        </div>
-
-        <h2 class="section-title">Certifications</h2>
+    <!-- Navigation -->
+    <nav>
         <ul>
-            <li>Microsoft Security, Compliance, and Identity Fundamentals</li>
-            <li>ITIL 4 Foundation</li>
-            <li>AWS Partner: Generative AI Essentials (Business)</li>
+            <li><a href="#summary">Summary</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#languages">Languages</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
-    </section>
+    </nav>
 
-    <footer class="footer">
+    <!-- Main Content -->
+    <div class="container">
+
+        <!-- Professional Summary -->
+        <section id="summary">
+            <h2 class="section-title">Professional Summary</h2>
+            <div class="summary">
+                <p>Energetic and knowledgeable Network Support Engineer with demonstrated experience in LAN, WAN, SD-WAN, and network security. Passionate about leveraging technical expertise to optimize network performance and security, ensuring seamless and secure connectivity. Adept in collaborating with vendors, configuring advanced network solutions, and managing incidents. Committed to proactive problem-solving and enhancing IT infrastructure, with the goal of driving operational excellence and supporting technological innovation.</p>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience">
+            <h2 class="section-title">Experience</h2>
+
+            <!-- Job 1 -->
+            <div class="job">
+                <h3>Network Support Engineer</h3>
+                <h4>HCL Technologies Sri Lanka | 2023 – Present</h4>
+                <p><strong>Project:</strong> DS Smith Network Management</p>
+                <ul>
+                    <li>Managed WAN and SD-WAN environments with vendors including Cisco, Colt, T-Systems, and NTT.</li>
+                    <li>Configured Fortinet firewalls, developed firewall policies, and optimized traffic flow to enhance network security.</li>
+                    <li>Resolved network issues, optimized performance, and handled support tickets to ensure reliable network operations.</li>
+                    <li>Diagnosed and resolved hardware, software, and connectivity issues, improving network reliability and user experience.</li>
+                    <li>Collaborated with vendors for efficient troubleshooting and resolution of WiFi support cases.</li>
+                    <li>Set up subnets, managed IP addresses (IPAM), and utilized Versa Director for SD-WAN monitoring and configuration.</li>
+                </ul>
+                <p><strong>Tools & Technologies:</strong> Versa Director, Colt, Infoblox Grid Manager, Fortinet, FortiClient VPN, Checkpoint Console, Cisco WLC</p>
+            </div>
+
+            <!-- Job 2 -->
+            <div class="job">
+                <h3>Network Support Engineer</h3>
+                <h4>HCL Technologies Sri Lanka | 2023 – 2024</h4>
+                <p><strong>Project:</strong> Unilever ForeScout & ZIA</p>
+                <ul>
+                    <li>Provided network support for ForeScout deployment, ensuring security and compliance across endpoints.</li>
+                    <li>Configured and troubleshot GRE tunnels, Access Control Lists (ACLs), IP SLA, and Policy-Based Routing (PBR) to improve routing and performance.</li>
+                    <li>Implemented VLANs at remote sites to segment traffic, enhance security, and streamline management.</li>
+                    <li>Set up zone-based firewalls on WAN routers to control traffic flow and secure the network.</li>
+                    <li>Developed security policies for zone-based firewalls to route traffic securely to Zscaler for web filtering.</li>
+                    <li>Configured and troubleshot SNMP and NetFlow on devices to enable monitoring and data flow analysis for efficient operations.</li>
+                </ul>
+            </div>
+
+            <!-- Job 3 -->
+            <div class="job">
+                <h3>Network Analyst</h3>
+                <h4>HCL Technologies Sri Lanka | 2021 – 2023</h4>
+                <p><strong>Project:</strong> Unilever LAN Operation</p>
+                <ul>
+                    <li>Monitored network availability and performance metrics, utilizing SNMP and NetFlow to address system alerts and potential issues proactively.</li>
+                    <li>Provided first-line technical support via phone, email, and chat, ensuring timely resolution of user inquiries and minimizing downtime.</li>
+                    <li>Logged customer issues and tracked helpdesk incidents within SLAs in the ITSM system, ensuring adherence to operational procedures.</li>
+                    <li>Collaborated with vendors for hardware procurement and troubleshooting, enhancing network reliability and performance through effective vendor management.</li>
+                    <li>Created and analyzed monthly network performance reports to identify trends and areas for improvement, implementing corrective actions as necessary.</li>
+                    <li>Managed the configuration of virtual servers, load balancers, and security settings to optimize network operations and maintain high availability.</li>
+                    <li>Conducted regular network assessments and performance tuning to ensure compliance with best practices and organizational standards.</li>
+                </ul>
+                <p><strong>Key Skills:</strong> Subnetting, IP addressing, VLANs, DNS, DHCP, NAT, PAT, SNAT, HTTP, TCP/IP, SSL, BGP, OSPF, EIGRP, ServiceNow, SolarWinds, Statseeker, NetScout, PRTG, Cisco ACI, SDN, Network Security Protocols, IDS, Endpoint Security</p>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills">
+                <div class="skill-category">
+                    <h4>Technical Skills</h4>
+                    <ul>
+                        <li>Network Infrastructure: LAN, WAN, ISP, DMZ, Data Center</li>
+                        <li>Routing Protocols: TCP/IP, IP Addressing, Subnetting</li>
+                        <li>Switching Technologies, Port Security, VPN Configuration</li>
+                        <li>Firewall Management, Network Security, IT Security Policies</li>
+                        <li>Network Monitoring, Network Configuration, Network Troubleshooting</li>
+                        <li>Incident & Ticket Management: ServiceNow, ITSM</li>
+                        <li>Wireless Networking, Load Balancers: Brocade ADX, F5</li>
+                        <li>Cloud Architecture, Office 365, Python, Cisco Technologies, Technical Log Analysis</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Personal Skills</h4>
+                    <ul>
+                        <li>Problem-Solving</li>
+                        <li>Analytical Skills</li>
+                        <li>Technical Troubleshooting</li>
+                        <li>Task Prioritization</li>
+                        <li>Time Management</li>
+                        <li>Multitasking</li>
+                        <li>Teamwork and Collaboration</li>
+                        <li>User Support</li>
+                        <li>Effective Communication</li>
+                        <li>IT Service Management</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section id="education">
+            <h2 class="section-title">Education</h2>
+            <div class="education">
+                <h3>BIT (Hons) in Networking and Mobile Computing</h3>
+                <p><strong>Horizon Campus</strong> | 2018 – 2022</p>
+                <p>Second Class Upper Division | GPA: 3.39/4.0</p>
+            </div>
+            <div class="education">
+                <h3>Advanced Level – Engineering Technology Stream</h3>
+                <p><strong>Al-Hilal Central College, Polonnaruwa, Sri Lanka</strong> | 2016</p>
+            </div>
+        </section>
+
+        <!-- Certifications -->
+        <section id="certifications">
+            <h2 class="section-title">Certifications</h2>
+            <div class="certifications">
+                <ul>
+                    <li>Microsoft Security, Compliance, and Identity Fundamentals</li>
+                    <li>ITIL 4 Foundation</li>
+                    <li>AWS Partner: Generative AI Essentials (Business) (Fundamental)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Languages -->
+        <section id="languages">
+            <h2 class="section-title">Languages</h2>
+            <div class="languages">
+                <ul>
+                    <li>Tamil</li>
+                    <li>English</li>
+                    <li>Sinhala</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-info">
+                <p>📧 <a href="mailto:abmaasir119@gmail.com">abmaasir119@gmail.com</a> | 📞 +94757792973</p>
+                <p><a href="http://www.linkedin.com/in/aseer-a-b-m-75b426177" target="_blank">LinkedIn Profile</a></p>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
         <p>&copy; 2024 Aseer ABM. All rights reserved.</p>
     </footer>
 
